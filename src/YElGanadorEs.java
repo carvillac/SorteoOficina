@@ -7,6 +7,7 @@ import java.util.Random;
 public class YElGanadorEs {
     
     public static final int MAX_RANDOM = 40;
+    public static final int PAUSA_TENSION_MILIS = 7000;
 
     public static void main(String[] args) {
 
@@ -17,10 +18,10 @@ public class YElGanadorEs {
         List<Integer> servidores = Arrays.asList(1, 2, 3);
 
         //Numeros posibles según la excel (hay que quitar en los que no haya nombre y debe acabar por coma)
-        String numPantallas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,2,25,26,27,28,2,30,31,32,33,34,35,3,37,38,39,40,";
-        String numTorresGrandes = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,2,25,26,27,28,2,30,31,32,33,34,35,3,37,38,39,40,";
-        String numTorresPequeñas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,2,25,26,27,28,2,30,31,32,33,34,35,3,37,38,39,40,";
-        String numServidores = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,2,25,26,27,28,2,30,31,32,33,34,35,3,37,38,39,40,";
+        String numPantallas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
+        String numTorresGrandes = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
+        String numTorresPequeñas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
+        String numServidores = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
 
         hacerSorteoBloque(pantallas, numPantallas, "Pantalla");
         hacerSorteoBloque(torresGrandes, numTorresGrandes, "Torre Grande");
@@ -57,7 +58,10 @@ public class YElGanadorEs {
             ganador = ram.nextInt(MAX_RANDOM -1) +1;
         }
 
-        System.out.println("El ganador del sorteo de " + elemento + " es el número.......... " + ganador);
+        System.out.println("El ganador del sorteo de " + elemento + " es el numero.......... " + ganador);
+        
+        pausaDeTension();
+                
         return ganador;
 
     }
@@ -68,6 +72,20 @@ public class YElGanadorEs {
     public static boolean esValidoElResultado(String numerosPosibles, int ganador) {
 
         return numerosPosibles.contains(ganador + ",");
+
+    }
+    
+    
+    /*
+     *       //Pausa para generar tensión entre sorteos
+     */
+    public static void pausaDeTension() {
+
+        try {
+                Thread.sleep(PAUSA_TENSION_MILIS);
+        } catch (Exception e){
+            
+        }
 
     }
 
