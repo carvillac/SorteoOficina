@@ -50,11 +50,11 @@ public class YElGanadorEs {
     public static int hacerSorteoIndividual(String elemento, String numerosPosibles) {
 
         Random ram = new Random();
-        int ganador = ram.nextInt(MAX_RANDOM);
+        int ganador = ram.nextInt(MAX_RANDOM -1) +1;
 
         //Hasta que no sea válido no damos un ganador.
         while (!esValidoElResultado(numerosPosibles, ganador)) {
-            ganador = ram.nextInt(MAX_RANDOM);
+            ganador = ram.nextInt(MAX_RANDOM -1) +1;
         }
 
         System.out.println("El ganador del sorteo de " + elemento + " es el número.......... " + ganador);
