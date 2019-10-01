@@ -7,7 +7,7 @@ import java.util.Random;
 public class YElGanadorEs {
     
     public static final int MAX_RANDOM = 40;
-    public static final int PAUSA_TENSION_MILIS = 7000;
+    public static final int PAUSA_TENSION_MILIS = 5000;
 
     public static void main(String[] args) {
 
@@ -18,15 +18,15 @@ public class YElGanadorEs {
         List<Integer> servidores = Arrays.asList(1, 2, 3);
 
         //Numeros posibles según la excel (hay que quitar en los que no haya nombre y debe acabar por coma)
-        String numPantallas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
-        String numTorresGrandes = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
-        String numTorresPequeñas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
-        String numServidores = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,";
+        String numPantallas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,";
+        String numTorresGrandes = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,30,31,33,35,36,40,";
+        String numTorresPequeñas = "1,2,3,4,5,6,7,8,9,10,11,13,15,16,18,19,20,23,27,29,31,33,35,36,";
+        String numServidores = "1,2,3,4,8,9,10,11,12,20,27,33,";
 
         hacerSorteoBloque(pantallas, numPantallas, "Pantalla");
-        hacerSorteoBloque(torresGrandes, numTorresGrandes, "Torre Grande");
-        hacerSorteoBloque(torresPequeñas, numTorresPequeñas, "Torre Pequeña");
-        hacerSorteoBloque(servidores, numServidores, "Servidor");
+        //hacerSorteoBloque(torresGrandes, numTorresGrandes, "Torre Grande");
+        //hacerSorteoBloque(torresPequeñas, numTorresPequeñas, "Torre Pequeña");
+        //hacerSorteoBloque(servidores, numServidores, "Servidor");
 
     }
 
@@ -35,6 +35,9 @@ public class YElGanadorEs {
      */
     public static void hacerSorteoBloque(List cosasASortear, String numerosPosibles, String descripcion) {
         System.out.println("******************** " + descripcion + " ************************");
+        System.out.println("El sorteo da comienzo....esta la bolas en el bombo....");
+        pausaDeTension();
+        
         for (int p = 0; p < cosasASortear.size(); p++) {
             int num = p + 1;
             int ganador = hacerSorteoIndividual(descripcion + " " + num, numerosPosibles);
@@ -43,6 +46,7 @@ public class YElGanadorEs {
         }
         System.out.println("*****************************************************************");
         System.out.println("");
+        System.out.println("Enhorabuena a los premiados!!");
     }
 
     /*
@@ -77,7 +81,7 @@ public class YElGanadorEs {
     
     
     /*
-     *       //Pausa para generar tensión entre sorteos
+     * Pausa para generar tensión entre sorteos
      */
     public static void pausaDeTension() {
 
