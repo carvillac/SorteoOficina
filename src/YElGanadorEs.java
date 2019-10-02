@@ -19,14 +19,14 @@ public class YElGanadorEs {
 
         //Numeros posibles según la excel (hay que quitar en los que no haya nombre y debe acabar por coma)
         String numPantallas = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,";
-        String numTorresGrandes = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,30,31,33,35,36,40,";
-        String numTorresPequeñas = "1,2,3,4,5,6,7,8,9,10,11,13,15,16,18,19,20,23,27,29,31,33,35,36,";
-        String numServidores = "1,2,3,4,8,9,10,11,12,20,27,33,";
+        String numTorresGrandes = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,35,36,37,40,";
+        String numTorresPequeñas = "1,2,3,4,5,6,7,8,9,10,11,13,15,16,18,19,20,23,24,26,27,29,31,32,35,36,";
+        String numServidores = "1,2,4,8,9,10,11,12,13,20,";
 
-        hacerSorteoBloque(pantallas, numPantallas, "Pantalla");
-        //hacerSorteoBloque(torresGrandes, numTorresGrandes, "Torre Grande");
-        //hacerSorteoBloque(torresPequeñas, numTorresPequeñas, "Torre Pequeña");
-        //hacerSorteoBloque(servidores, numServidores, "Servidor");
+        //hacerSorteoBloque(pantallas, numPantallas, "Pantalla");
+        hacerSorteoBloque(torresGrandes, numTorresGrandes, "Torre Grande");
+        hacerSorteoBloque(torresPequeñas, numTorresPequeñas, "Torre Pequeña");
+        hacerSorteoBloque(servidores, numServidores, "Servidor");
 
     }
 
